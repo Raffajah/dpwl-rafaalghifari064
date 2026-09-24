@@ -1,5 +1,3 @@
 <?php
-$config = [
-    'base_url' => 'http://localhost/dpwl-rafaalghifari064/',
-];
+$config['base_url'] = 'http://localhost/dpwl-rafaalghifari064/';
 ?>
