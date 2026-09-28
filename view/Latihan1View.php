@@ -96,7 +96,7 @@
         <?php
         $i = 1;
 
-        foreach ($data as $mhs) {
+        foreach ($datamhs as $mhs) {
         ?>
             <tr>
                 <td><?= $i++; ?>.</td>

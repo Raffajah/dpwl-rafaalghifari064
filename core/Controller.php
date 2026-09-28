@@ -1,5 +1,5 @@
 <?php
-class Controller 
+class controller 
 {
     public function __construct()
     {
