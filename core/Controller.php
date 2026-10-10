@@ -1,5 +1,5 @@
 <?php
-class Controller 
+class Controller
 {
     public function __construct()
     {
@@ -15,7 +15,21 @@ class Controller
                 require_once './model/' . $modelName . '.php';
                 return new $modelName();
             }
+            public function post($key = null)
+            {
+                if ($key === null) {
+                    return $_POST;
+                }
+                return $_POST[$key] ?? null;
+            }
+
+            public function get($key = null)
+            {
+                if ($key === null) {
+                    return $_GET;
+                }
+                return $_GET[$key] ?? null;
+            }
         };
     }
 }
-?>
