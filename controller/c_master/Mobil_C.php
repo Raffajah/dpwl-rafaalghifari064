@@ -29,7 +29,7 @@ class Mobil_C extends Controller
             exit;
         }
         $ft_depan    = 'Depan' . $this->load->post('no_plat');
-        $ft_blkg     = 'Belakang' . $this->load->post('no_plat');
+        $ft_blkng     = 'Belakang' . $this->load->post('no_plat');
         $ft_interior = 'Interior' . $this->load->post('no_plat');
         $folder = dirname(__DIR__, 2) . '/img/';
         if (isset($_FILES['ft_depan']) && $_FILES['ft_depan']['error'] == 0) {
@@ -52,7 +52,7 @@ class Mobil_C extends Controller
             'transmisi'  => $this->load->post('transmisi'),
             'thn_buat'   => $this->load->post('thn_buat'),
             'ft_depan'   => $ft_depan,
-            'ft_blkg'    => $ft_blkg,
+            'ft_blkng'    => $ft_blkng,
             'ft_interior' => $ft_interior,
             'hrg_hari'   => $this->load->post('hrg_hari'),
             'cttn_unit'  => $this->load->post('cttn_unit'),
