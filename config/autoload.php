@@ -1,14 +1,23 @@
 <?php
 spl_autoload_register(function ($namacontroller) {
-    $paths = ['controller/', 'model/', 'config/', 'core/', 'contoller/c_master'];
+    $paths = [
+        'controller/',
+        'model/',
+        'config/',
+        'core/',
+        'controller/c_master/',
+        'model/m_master/'
+    ];
 
     foreach ($paths as $path) {
         $file = $path . $namacontroller . '.php';
+
         if (file_exists($file)) {
             require_once $file;
             return;
         }
     }
+
     echo "Class '$namacontroller' tidak ditemukan.";
 });
 ?>

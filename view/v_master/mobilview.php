@@ -42,7 +42,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($dtmobil as $m) : ?>
+                        <?php foreach ($datamobil as $m) : ?>
                             <tr>
                                 <td><?= $m['no_plat'] ?></td>
                                 <td><?= $m['nm_mobil'] ?></td>
@@ -50,7 +50,7 @@
                                 <td><?= $m['nbagasi'] ?></td>
                                 <td><?= $m['jns_mobil'] . '<br>' . $m['transmisi'] ?></td>
                                 <td><?= $m['thn_buat'] ?></td>
-                                <td><?= $m['ft_depan'] . '<br>' . $m['ft_blkg'] . '<br>' . $m['ft_interior'] ?></td>
+                                <td><?= $m['ft_depan'] . '<br>' . $m['ft_blkng'] . '<br>' . $m['ft_interior'] ?></td>
                                 <td><?= $m['hrg_hari'] ?></td>
                                 <td><?= $m['cttn_unit'] ?></td>
                                 <td><?= $m['status_unit'] ?></td>
