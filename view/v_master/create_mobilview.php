@@ -117,9 +117,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="ft_blkg">Foto Belakang Mobil</label>
-                                    <input type="file" name="ft_blkg"
-                                           id="ft_blkg" class="form-control"
+                                    <label for="ft_blkng">Foto Belakang Mobil</label>
+                                    <input type="file" name="ft_blkng"
+                                           id="ft_blkng" class="form-control"
                                            accept="image/*" required>
                                 </div>
 
