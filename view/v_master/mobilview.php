@@ -52,27 +52,31 @@
                         <td><?= $m['nbagasi'] ?></td>
                         <td><?= $m['jns_mobil'] . '<br>' . $m['transmisi'] ?></td>
                         <td><?= $m['thn_buat'] ?></td>
+                        
+<td>
+    <?php if (!empty($m['ft_depan'])) : ?>
+        <img src="<?= base_url('img/' . $m['ft_depan']) ?>"
+             style="width: 100px; height: 70px; object-fit: cover;"
+             alt="Foto Depan Mobil"
+             onerror="this.style.display='none';">
+        <br>
+    <?php endif; ?>
 
+    <?php if (!empty($m['ft_blkng'])) : ?>
+        <img src="<?= base_url('img/' . $m['ft_blkng']) ?>"
+             style="width: 100px; height: 70px; object-fit: cover;"
+             alt="Foto Belakang Mobil"
+             onerror="this.style.display='none';">
+        <br>
+    <?php endif; ?>
 
-                        <td>
-                          Depan<br>
-                          <img src="<?= base_url('img/' . rawurlencode($m['ft_depan'])) ?>"
-                            alt="Foto Depan"
-                            style="width: 100px; height: auto;"
-                            onerror="this.alt='Foto depan tidak ditemukan';"><br>
-
-                          Belakang<br>
-                          <img src="<?= base_url('img/' . rawurlencode($m['ft_blkng'])) ?>"
-                            alt="Foto Belakang"
-                            style="width: 100px; height: auto;"
-                            onerror="this.alt='Foto belakang tidak ditemukan';"><br>
-
-                          Interior<br>
-                          <img src="<?= base_url('img/' . rawurlencode($m['ft_interior'])) ?>"
-                            alt="Foto Interior"
-                            style="width: 100px; height: auto;"
-                            onerror="this.alt='Foto interior tidak ditemukan';">
-                        </td>
+    <?php if (!empty($m['ft_interior'])) : ?>
+        <img src="<?= base_url('img/' . $m['ft_interior']) ?>"
+             style="width: 100px; height: 70px; object-fit: cover;"
+             alt="Foto Interior Mobil"
+             onerror="this.style.display='none';">
+    <?php endif; ?>
+</td>
 
 
                         <td><?= $m['hrg_hari'] ?></td>

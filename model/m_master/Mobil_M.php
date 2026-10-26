@@ -22,7 +22,13 @@ class Mobil_M extends Model
         $hasil = $sql->get_result();
         return $hasil->num_rows > 0;
     }
-    #edit mobil
+    public function simpan($data)
+    {
+        $sql = $this->db->prepare("INSERT INTO mobil (no_plat,nm_mobil,nkursi,nbagasi,jns_mobil,transmisi,thn_buat,ft_depan,ft_blkng,ft_interior,hrg_hari,cttn_unit,status_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        $sql->bind_param("ssiissssssdss", $data['no_plat'], $data['nm_mobil'], $data['nkursi'], $data['nbagasi'], $data['jns_mobil'], $data['transmisi'], $data['thn_buat'], $data['ft_depan'], $data['ft_blkng'], $data['ft_interior'], $data['hrg_hari'], $data['cttn_unit'], $data['status_unit']);
+        return $sql->execute();
+    }
     public function getmobil($no_plat)
     {
         $sql = $this->db->prepare("SELECT * FROM mobil WHERE no_plat = ?");
@@ -30,10 +36,9 @@ class Mobil_M extends Model
         $sql->execute();
         return $sql->get_result()->fetch_assoc();
     }
-public function update_mobil($no_plat, $data)
+   public function update($no_plat, $data)
 {
-    $sql = $this->db->prepare(
-        "UPDATE mobil SET
+    $sql = $this->db->prepare("UPDATE mobil SET
         nm_mobil = ?,
         nkursi = ?,
         nbagasi = ?,
@@ -46,8 +51,11 @@ public function update_mobil($no_plat, $data)
         hrg_hari = ?,
         cttn_unit = ?,
         status_unit = ?
-        WHERE no_plat = ?"
-    );
+        WHERE no_plat = ?");
+
+    if (!$sql) {
+        die("Prepare gagal: " . $this->db->error);
+    }
 
     $sql->bind_param(
         "siississsdsss",
@@ -66,14 +74,10 @@ public function update_mobil($no_plat, $data)
         $no_plat
     );
 
-    return $sql->execute();
-}
-    #sampai sini
-    public function simpan($data)
-    {
-        $sql = $this->db->prepare("INSERT INTO mobil (no_plat,nm_mobil,nkursi,nbagasi,jns_mobil,transmisi,thn_buat,ft_depan,ft_blkng,ft_interior,hrg_hari,cttn_unit,status_unit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-        $sql->bind_param("siississsdsss", $data['no_plat'], $data['nm_mobil'], $data['nkursi'], $data['nbagasi'], $data['jns_mobil'], $data['transmisi'], $data['thn_buat'], $data['ft_depan'], $data['ft_blkng'], $data['ft_interior'], $data['hrg_hari'], $data['cttn_unit'], $data['status_unit']);
-        return $sql->execute();
+    if (!$sql->execute()) {
+        die("Update gagal: " . $sql->error);
     }
+
+    return true;
+}
 }
