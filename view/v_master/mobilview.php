@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">ラファ</h1>
+            <h1 class="m-0">Starter Page Rafa</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -38,7 +38,7 @@
                       <th>Tahun</th>
                       <th>Foto</th>
                       <th>Biaya Perhari</th>
-                      <th>Catatan Unit</th>
+                      <th>Cartatan Unit</th>
                       <th>Status Unit</th>
                       <th>Aksi</th>
                     </tr>
@@ -52,44 +52,41 @@
                         <td><?= $m['nbagasi'] ?></td>
                         <td><?= $m['jns_mobil'] . '<br>' . $m['transmisi'] ?></td>
                         <td><?= $m['thn_buat'] ?></td>
-                        
-<td>
-    <?php if (!empty($m['ft_depan'])) : ?>
-        <img src="<?= base_url('img/' . $m['ft_depan']) ?>"
-             style="width: 100px; height: 70px; object-fit: cover;"
-             alt="Foto Depan Mobil"
-             onerror="this.style.display='none';">
-        <br>
-    <?php endif; ?>
-
-    <?php if (!empty($m['ft_blkng'])) : ?>
-        <img src="<?= base_url('img/' . $m['ft_blkng']) ?>"
-             style="width: 100px; height: 70px; object-fit: cover;"
-             alt="Foto Belakang Mobil"
-             onerror="this.style.display='none';">
-        <br>
-    <?php endif; ?>
-
-    <?php if (!empty($m['ft_interior'])) : ?>
-        <img src="<?= base_url('img/' . $m['ft_interior']) ?>"
-             style="width: 100px; height: 70px; object-fit: cover;"
-             alt="Foto Interior Mobil"
-             onerror="this.style.display='none';">
-    <?php endif; ?>
-</td>
-
-
+                        <td>
+                          <?php if (!empty($m['ft_depan'])) : ?>
+                            <img src="<?= base_url('img/' . $m['ft_depan']) ?>"
+                              style="width: 80px; height: 40px; object-fit: cover;"
+                              alt="Foto Depan Mobil"
+                              onerror="this.style.display='none';">
+                            <br>
+                          <?php endif; ?>
+                          <?php if (!empty($m['ft_blkng'])) : ?>
+                            <img src="<?= base_url('img/' . $m['ft_blkng']) ?>"
+                              style="width: 80px; height: 40px; object-fit: cover;"
+                              alt="Foto Belakang Mobil"
+                              onerror="this.style.display='none';">
+                            <br>
+                          <?php endif; ?>
+                          <?php if (!empty($m['ft_interior'])) : ?>
+                            <img src="<?= base_url('img/' . $m['ft_interior']) ?>"
+                              style="width: 80px; height: 40px; object-fit: cover;"
+                              alt="Foto Interior Mobil"
+                              onerror="this.style.display='none';">
+                            <br>
+                          <?php endif; ?>
+                        </td>
                         <td><?= $m['hrg_hari'] ?></td>
                         <td><?= $m['cttn_unit'] ?></td>
                         <td><?= $m['status_unit'] ?></td>
                         <td>
-                          <a href="<?= base_url('Mobil_C/edit_mobil/' . $m['no_plat']) ?>" class="btn btn-warning btn-sm">Edit</a>
-                          <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                          <a href="<?= base_url('Mobil_C/edit/' . $m['no_plat']) ?>" class="btn btn-warning btn-sm">Edit</a>
+                          <a href="<?= base_url('Mobil_C/hapus/' . $m['no_plat']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus mobil ini?')">Hapus</a>
                         </td>
                       </tr>
                     <?php endforeach; ?>
                     <!-- Data mobil -->
                   </tbody>
+
                 </table>
               </div>
             </div>
