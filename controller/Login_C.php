@@ -9,9 +9,15 @@
         }
         public function penyewa()
         {
-            $this->session->set_userdata('userplg', 'penyewa');
-            $this->load->view('login');
-        }
+        $this->session->set_userdata('userplg', 'penyewa');
+        $dt['EmPlg'] = $this->session->userdata('EmailPlg');
+        $dt['NmPlg'] = $this->session->userdata('NmPlg');
+        $dt['psn'] = $this->session->set_flashdata('pesan');
+        $this->load->view('layoutshop/headershop', $dt);
+        $this->load->view('layoutshop/menushop');
+        $this->load->view('loginpenyewa', $dt);
+        $this->load->view('layoutshop/footershop');
+            }
         public function CekLogin()
         {
             if (!empty($this->session->userdata('userplg'))) {
