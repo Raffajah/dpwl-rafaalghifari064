@@ -4,7 +4,7 @@
 
     <!-- Brand Logo -->
     <a href="<?= base_url('Mobil_C/index') ?>" class="brand-link">
-        <img src="<?= base_url('img/mik.jpg') ?>"
+        <img src="<?= base_url('mik.jpg') ?>"
              alt="Logo"
              class="brand-image img-circle elevation-3"
              style="opacity: .95">
@@ -20,7 +20,7 @@
         <!-- User Panel -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
             <div class="image">
-                <img src="<?= base_url('img/icon.jpg') ?>"
+                <img src="<?= base_url('icon.jpg') ?>"
                      class="img-circle elevation-2"
                      alt="User Image"
                      style="width:35px;height:35px;object-fit:cover;">
@@ -30,7 +30,7 @@
                 <a href="#" class="d-block">
                     <i class="fas fa-circle text-success mr-1"
                        style="font-size:8px;"></i>
-                    <?= htmlspecialchars($nm_user ?? 'User', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($nm_user ?? '', ENT_QUOTES, 'UTF-8') ?>
                 </a>
                 <small style="color:#8fa8c9;">Administrator</small>
             </div>
@@ -86,6 +86,13 @@
 
                         <li class="nav-item">
                             <a href="<?= base_url('Penyewa_C064/index') ?>" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Data Penyewa UTS</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="<?= base_url('Penyewa_C/index') ?>" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Data Penyewa</p>
                             </a>
