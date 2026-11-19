@@ -88,7 +88,7 @@ if (!empty($psn)) {
                 </a>
                 <a href="" class="btn border">
                     <i class="fas fa-shopping-cart text-info"></i>
-                    <span class="badge">0</span>
+                    <span class="badge"><?= $dtkeranjang ?></span>
                 </a>
             </div>
            <div class="col-lg-12 text-right">

@@ -39,6 +39,7 @@
                     exit();
                 }
                 exit();
+                
             } else {
                 $email = $this->load->post('email');
                 $password = $this->load->post('pass');

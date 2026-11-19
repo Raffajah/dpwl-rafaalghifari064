@@ -6,7 +6,10 @@ spl_autoload_register(function ($namacontroller) {
         'config/',
         'core/',
         'controller/c_master/',
-        'model/m_master/'
+        'controller/c_shop/',
+        'model/m_master/',
+        'model/m_shop/'
+
     ];
 
     foreach ($paths as $path) {
